@@ -1,0 +1,24 @@
+@startuml
+
+package course <<Aggregate>> {
+    class Course <<Aggregate Root>> {
+        id: CourseId
+        teacher: TeacherId
+        examination: ExaminationId
+        create(): Course
+        publish(): void
+        update(): Course
+    }
+
+    Course "1" *--> "N" Examination
+    class Examination <<Value Object>> {
+        id: ExaminationId
+    }
+
+    Examination "1" *--> "N" Paper
+    class Paper <<Value Object>> {
+        id: PaperId
+    }
+}
+
+@enduml

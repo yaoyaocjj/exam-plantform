@@ -1,0 +1,21 @@
+@startuml
+package answersheet <<Aggregate>> {
+    class AnswerSheet <<Aggregate Root>> {
+        id: AnswerSheetId
+        examination: ExaminationId
+        student: StudentId
+        answer: List<Answer>
+        assign(): void
+        submit(): void
+        review(): Score
+    }
+
+    AnswerSheet "1" <-- "N" Answer
+
+    class Answer <<Value Object>> {
+        id: AnswerId,
+        content: String
+    }
+}
+
+@enduml

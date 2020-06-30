@@ -1,11 +1,8 @@
 package exam.paperContext.domain.model.paper;
 
+import exam.blankQuizContext.domain.model.blankQuiz.BlankQuiz;
 import exam.paperContext.domain.shared.Entity;
-import exam.paperContext.domain.shared.ValueObject;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
@@ -66,17 +63,5 @@ public class Paper implements Entity<Paper> {
         validateQuizzes(blankQuizzes);
         this.teacherId = teacherId;
         this.blankQuizzes = blankQuizzes;
-    }
-
-    @Getter
-    @AllArgsConstructor
-    public static class BlankQuiz implements ValueObject<BlankQuiz> {
-        private String quizId;
-        private int score;
-
-        @Override
-        public boolean sameValueAs(BlankQuiz other) {
-            return false;
-        }
     }
 }

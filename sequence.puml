@@ -1,0 +1,12 @@
+@startuml
+autonumber
+
+actor A
+actor B
+database C #red
+
+A -> B : Request sth
+B -> C : save request
+C -> B : query sth
+B -[#green]> A : Response sth
+@enduml

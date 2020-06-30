@@ -1,0 +1,30 @@
+@startuml
+package examination <<Aggregate>> {
+    class Examination <<Aggregate Root>> {
+        id: ExaminationId
+        paper: Paper
+        createdAt: Time
+        startTime: Time
+        duration: Time
+        teacherId: TeacherId
+        score: Int
+        course: CourseId
+        create(): Examination
+    }
+
+    Examination "1" *--> "1" Paper
+
+    class Paper <<Value Object>> {
+        id: PaperId
+    }
+
+    Paper "1" *--> "N" BlankQuiz
+
+    class BlankQuiz <<Value Object>> {
+        id: BlankQuizId
+        content: String
+        answer: String
+        score: Int
+    }
+}
+@enduml

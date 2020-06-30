@@ -1,0 +1,17 @@
+@startuml
+package paper <<Aggregate>> {
+    class Paper <<Aggregate Root>> {
+        id: PaperId
+        blankQuizzes: List<BlankQuiz>
+        examinationId: ExaminationId
+        assemble(): Paper
+        reassemble(): Paper
+    }
+
+    Paper "1" --> "N" BlankQuiz
+
+   class BlankQuiz <<Object Value>> {
+        id: BlankQuizId
+   }
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+package blankquiz <<Aggregate>> {
+    class BlankQuiz <<Aggregate Root>> {
+        id: BlankQuizId
+        question: String
+        answer: String
+        score: Int
+        create(): BlankQuiz
+        delete(): void
+        update(): BlankQuiz
+    }
+
+    BlankQuiz <-- Paper
+
+    class Paper <<Value Object>> {
+        id: PaperId
+    }
+}
+
+@enduml
