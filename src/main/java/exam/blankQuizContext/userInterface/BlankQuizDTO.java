@@ -1,11 +1,11 @@
 package exam.blankQuizContext.userInterface;
 
 import exam.blankQuizContext.domain.model.blankQuiz.BlankQuizId;
+import exam.paperContext.userInterface.PaperDTO;
 
 public class BlankQuizDTO {
-    private String uri;
 
-    public static BlankQuizDTO from(BlankQuizId paperId) {
-        return new BlankQuizDTO("blank-quiz/" + paperId);
+    public static BlankQuizDTO from(BlankQuizId blankQuizId) {
+        return new PaperDTO("blankQuizzes/" + blankQuizId);
     };
 }

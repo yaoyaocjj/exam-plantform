@@ -4,7 +4,7 @@ import exam.paperContext.application.AssemblePaperCommand;
 import exam.paperContext.application.PaperApplicationService;
 import exam.paperContext.domain.model.paper.Paper;
 import exam.paperContext.domain.model.paper.PaperId;
-import exam.paperContext.infrastructure.MemoryPaperReadRepository;
+import exam.paperContext.infrastructure.MemoryBlankQuizReadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +15,10 @@ import java.util.List;
 public class PaperController {
 
     private PaperApplicationService paperApplicationService;
-    private MemoryPaperReadRepository paperReadRepository;
+    private MemoryBlankQuizReadRepository paperReadRepository;
 
     @Autowired
-    public PaperController(PaperApplicationService paperApplicationService, MemoryPaperReadRepository paperReadRepository) {
+    public PaperController(PaperApplicationService paperApplicationService, MemoryBlankQuizReadRepository paperReadRepository) {
         this.paperApplicationService = paperApplicationService;
         this.paperReadRepository = paperReadRepository;
     }

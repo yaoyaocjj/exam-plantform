@@ -1,6 +1,7 @@
 package exam.blankQuizContext.application;
 
 import exam.blankQuizContext.domain.model.blankQuiz.BlankQuiz;
+import exam.blankQuizContext.domain.model.blankQuiz.BlankQuizId;
 import exam.blankQuizContext.domain.model.blankQuiz.BlankQuizRepository;
 import exam.paperContext.domain.service.BlankQuizClient;
 import exam.paperContext.domain.service.BlankQuizDto;
@@ -21,6 +22,18 @@ public class BlankQuizApplicationService {
     @Autowired
     public BlankQuizApplicationService(BlankQuizRepository blankQuizRepository) {
         this.blankQuizRepository = blankQuizRepository;
+    }
+
+    public BlankQuizId saveBlankQuiz(BlankQuiz blankQuiz) {
+        return blankQuizRepository.save(blankQuiz);
+    }
+
+    public BlankQuiz getBlankQuizById(BlankQuizId blankQuizId) {
+        return blankQuizRepository.find(blankQuizId);
+    }
+
+    public void updateBlankQuiz(BlankQuiz blankQuiz) {
+        blankQuizRepository.update(blankQuiz);
     }
 
     public List<BlankQuiz> getAll() {

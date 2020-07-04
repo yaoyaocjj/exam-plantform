@@ -6,7 +6,9 @@ public interface BlankQuizRepository {
 
     BlankQuiz find(BlankQuizId blankQuizId);
 
-    void save(BlankQuiz blankQuiz);
+    BlankQuizId save(BlankQuiz blankQuiz);
+
+    void update(BlankQuiz blankQuiz);
 
     List<BlankQuiz> getAll();
 }
